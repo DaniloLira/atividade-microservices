@@ -1,0 +1,98 @@
+[
+    {
+        "name":"Batman",
+        "power": "Invisibilidade",
+        "id":0,
+        "pais":0
+    },
+    {
+        "name":"Superman",
+        "power": "Invisibilidade",
+        "id":1,
+        "pais":1
+    },
+    {
+        "name":"Flash",
+        "power": "Invisibilidade",
+        "id":2,
+        "pais":2
+    },
+    {
+        "name":"Green Lantern",
+        "power": "Invisibilidade",
+        "id":3,
+        "pais":3
+    },
+    {
+        "name":"Green Arrow",
+        "power": "Invisibilidade",
+        "id":4,
+        "pais":4
+    },
+    {
+        "name":"Wonder Woman",
+        "power": "Invisibilidade",
+        "id":5,
+        "pais":5
+    },
+    {
+        "name":"Martian Manhunter",
+        "power": "Invisibilidade",
+        "id":6,
+        "pais":6
+    },
+    {
+        "name":"Robin/Nightwing",
+        "power": "Invisibilidade",
+        "id":7,
+        "pais":7
+    },
+    {
+        "name":"Blue Beetle",
+        "power": "Invisibilidade",
+        "id":8,
+        "pais":8
+    },
+    {
+        "name":"Black Canary",
+        "power": "Invisibilidade",
+        "id":9,
+        "pais":9
+    },
+    {
+        "name":"Spider Man",
+        "power": "Invisibilidade",
+        "id":10,
+        "pais":10
+    },
+    {
+        "name":"Captain America",
+        "power": "Invisibilidade",
+        "id":11,
+        "pais":11
+    },
+    {
+        "name":"Iron Man",
+        "power": "Invisibilidade",
+        "id":12,
+        "pais":12
+    },
+    {
+        "name":"Thor",
+        "power": "Invisibilidade",
+        "id":13,
+        "pais":13
+    },
+    {
+        "name":"Hulk",
+        "power": "Invisibilidade",
+        "id":14,
+        "pais":14
+    },
+    {
+        "name":"Wolverine",
+        "power": "Invisibilidade",
+        "id":15,
+        "pais":15
+    }
+]
