@@ -57,4 +57,4 @@ app.put('/hero/**', (req, res) => {
 });
 
 console.log(`Heroes service listening on port 3000`);
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
