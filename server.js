@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
@@ -8,17 +7,38 @@ const app = express();
 
 app.use(bodyParser.json());
 
-
 let rawdata = fs.readFileSync('superhero.json');
-const heroes = JSON.parse(rawdata);
+var heroes = JSON.parse(rawdata);
 
-
+//Get all heroes
 app.get('/heroes', (req, res) => {
   console.log('Returning heroes list');
   res.send(heroes);
 });
 
-app.post('/hero/**', (req, res) => {
+
+// Insert new hero
+app.post('/hero', (req, res) => {
+  const newHero = {
+      id: heroes.length,
+      name: req.body.name,
+      power: req.body.power,
+      pais: req.body.pais
+  };
+
+  heroes.push(newHero);
+
+  rawHeroes = JSON.stringify(heroes)
+  fs.writeFileSync('superhero.json', rawHeroes);
+
+  console.log(`Added "${newHero.name}" to heroes`);
+
+  res.status(202).header().send(newHero);
+});
+
+
+//Insert attribute into hero
+app.put('/hero/**', (req, res) => {
   const id = parseInt(req.params[0]);
   const foundHero = heroes.find(subject => subject.id === id);
 
@@ -26,17 +46,15 @@ app.post('/hero/**', (req, res) => {
       for (let attribute in foundHero) {
           if (req.body[attribute]) {
               foundHero[attribute] = req.body[attribute];
-              console.log(`Set ${attribute} to ${req.body[attribute]} in hero: ${id}`);
           }
       }
-      res.status(202).header({Location: `http://localhost:${port}/hero/${foundHero.id}`}).send(foundHero);
+      
+      res.status(202).send(foundHero);
   } else {
       console.log(`Hero not found.`);
       res.status(404).send();
   }
 });
-
-app.use('/img', express.static(path.join(__dirname,'img')));
 
 console.log(`Heroes service listening on port ${port}`);
 app.listen(port);
